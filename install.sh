@@ -14,7 +14,8 @@ set -e
 # install updates, sudo, apache, make, gcc, bison, vim, csh non-interatively
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
-apt-get -q -y install sudo apache2 gcc make bison vim csh
+apt-get -q -y install sudo apache2 gcc make bison vim csh nodejs nodejs-legacy npm
+npm install -g coffee-script forever
 
 # create a moo user, with sudo group,
 useradd -g sudo -s /bin/bash -p users -d /home/moo -m moo
@@ -47,9 +48,19 @@ chown -R moo moo
 # Start the enCore server
 chmod 755 ${INSTALLDIR}/bin/restart
 cd ${INSTALLDIR}/bin
-su moo
-./restart enCore
-exit
+
+# Install the JavaScript telnet client
+git clone https://github.com/rhinoceraptor/LitWorlds.git
+cd LitWorlds
+git checkout telnet_only
+cd src/server
+npm install
+cake build
+
+cd ../client
+cake build
+cd ..
+cp -r client /usr/local/moo/encore/
 
 # Restart Apache
 service apache2 restart
