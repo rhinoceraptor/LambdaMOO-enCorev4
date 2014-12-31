@@ -32,7 +32,7 @@ cd ..
 # make bin directory, copy the moo server and the restart script to it
 mkdir ${INSTALLDIR}/bin
 cp lambdamoo/moo ${INSTALLDIR}/bin/
-cp lambdamoo/restart ${INSTALLDIR}/bin/
+cp lambdamoo/restart.sh ${INSTALLDIR}/bin/
 cp encore/enCore.db ${INSTALLDIR}/bin/
 
 # Copy encore to /usr/local/moo/
@@ -46,10 +46,11 @@ cd ${INSTALLDIR}/..
 chown -R moo moo
 
 # Start the enCore server
-chmod 755 ${INSTALLDIR}/bin/restart
+chmod 755 ${INSTALLDIR}/bin/restart.sh
 cd ${INSTALLDIR}/bin
 
 # Install the JavaScript telnet client
+cd ${INSTALLDIR}
 git clone https://github.com/rhinoceraptor/LitWorlds.git
 cd LitWorlds
 git checkout telnet_only
