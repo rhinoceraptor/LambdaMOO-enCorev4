@@ -32,7 +32,7 @@ cd ..
 # make bin directory, copy the moo server and the restart script to it
 mkdir ${INSTALLDIR}/bin
 cp lambdamoo/moo ${INSTALLDIR}/bin/
-cp lambdamoo/restart ${INSTALLDIR}/bin/
+cp lambdamoo/restart.sh ${INSTALLDIR}/bin/
 cp encore/enCore.db ${INSTALLDIR}/bin/
 
 # Copy encore to /usr/local/moo/
