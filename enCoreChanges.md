@@ -5,21 +5,21 @@ How to configure enCore for the JavaScript telnet client
 - Two verbs need to be changed for enCore to work with the new JavaScript client.
 - If you have not already done so, start LambdaMOO and the NodeJS server
   - The restart.sh script is located at /usr/local/moo/bin, run it as the moo user:
-  - Type: 'su moo'
-  - Type: 'cd /usr/local/moo/bin'
-  - Type: './restart.sh enCore'
+  - Type: ```su moo```
+  - Type: ```cd /usr/local/moo/bin```
+  - Type: ```./restart.sh enCore```
 - You will need to log in to the MOO using MOOtcan, using the default wizard account.
 - If you have not already configured the MOO in the telnet, do that now:
-  - Connect to telnet like this: 'telnet 127.0.0.1 7777'
-  - Type: 'co wizard'
-  - Type: '@configure'
-  - Select option 8: '8'
+  - Connect to telnet like this: ```telnet 127.0.0.1 7777```
+  - Type: ```co wizard```
+  - Type: ```@configure```
+  - Select option 8: ```8```
   - Type in the IP or domain for your server
-  - Select option 18: '18'
-  - Enter a path for enCore to be served by Apache: 'http://<IP or domain here>/encore'
-  - Quit: 'Q'
-  - Disconnect: '@quit'
-- Now you will be able to connect to Xpress by visiting '<IP or domain here>:7000'
+  - Select option 18: ```18```
+  - Enter a path for enCore to be served by Apache: ```http://<IP or domain here>/encore```
+  - Quit: ```Q```
+  - Disconnect: ```@quit```
+- Now you will be able to connect to Xpress by visiting ```http://<IP or domain here>:7000```
 - Log in using the wizard account (The Java Applet will work fine using Iced Tea and Firefox under Linux)
 - Install the verb to embed the JavaScript client in the normal Xpress interface:
   - Click the 'Program' button in the toolbar
