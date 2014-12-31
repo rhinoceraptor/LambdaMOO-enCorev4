@@ -1,12 +1,5 @@
 This repository contains LambdaMOO and enCore database, and a bash script to install them on a stock Ubuntu server.
 
-After running the install.sh script, you will need to:
-- set a UNIX password for the moo user
-- configure the MOO, by performing the following:
-  - `telnet 127.0.0.1 7777`
-  - `co wizard`
-  - `@configure`
-  - Modify the MOO domain name (option 8) to your domain or IP address
-  - Modify the base URL (option 18) to `http://<your domain or ip>/encore`
+This branch contains the install.sh script, which will set up a modified version of enCore Xpress that removes the Java Applet, MOOtcan, which was used for the telnet connection.
 
-The js_telnet branch contains a modified enCore database, as well as removing MOOtcan and replacing it the a Javascript only telnet client.
+After running the install.sh script, (make sure you ```git checkout js_telnet``` first after cloning to your server), follow the directions in enCoreChanges.md to convert the enCore database to the new JavaScript telnet client.
