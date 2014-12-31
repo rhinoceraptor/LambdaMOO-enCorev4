@@ -37,10 +37,14 @@ if [ -f $1.log ]; then
 	rm $1.log
 fi
 
+forever stop 0
 echo `date`: RESTARTED >> $1.log
 nohup ./moo $1.db $1.db.new $2 >> $1.log 2>&1 &
+forever start /home/moo/LitWorlds/src/server/dist/server.js
 
 ###############################################################################
+# 2014/12/30: added lines 40, 43 to stop and start Node.JS server for telnet
+#
 # $Log: restart.sh,v $
 # Revision 1.1.1.1  1997/03/03 03:45:05  nop
 # LambdaMOO 1.8.0p5
