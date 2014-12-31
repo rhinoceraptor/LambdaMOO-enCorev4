@@ -40,7 +40,7 @@ fi
 forever stop 0
 echo `date`: RESTARTED >> $1.log
 nohup ./moo $1.db $1.db.new $2 >> $1.log 2>&1 &
-forever start /home/moo/LitWorlds/src/server/dist/server.js
+forever start /usr/local/moo/LitWorlds/src/server/dist/server.js
 
 ###############################################################################
 # 2014/12/30: added lines 40, 43 to stop and start Node.JS server for telnet

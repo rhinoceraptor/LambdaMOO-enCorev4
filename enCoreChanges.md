@@ -1,11 +1,27 @@
-Changes made to the enCore Database to support the JavaScript telnet client
----------------------------------------------------------------------------
+
+How to configure enCore so that the JavaScript telnet client works
+------------------------------------------------------------------
+
+- Two verbs need to be changed for enCore to work with the new JavaScript client.
+- If you have not already done so, start LambdaMOO and the NodeJS server
+  - The restart.sh script is located at /usr/local/moo/bin
+  - Type: './restart enCore'
+- You will need to log in to the MOO using MOOtcan, using the default wizard account.
+- If you have not already configured the MOO in the telnet, do that now:
+  - Connect to telnet like this: 'telnet 127.0.0.1 7777'
+  - Type: 'co wizard'
+  - Type: '@configure'
+  - Select option 8: '8'
+  - Type in the IP or domain for your server
+  - Select option 18: '18'
+  - Enter a path for enCore to be served by Apache: 'http://<IP or domain here>/encore'
+  - Quit: 'Q'
+  - Disconnect: '@quit'
+- Now you will be able to connect to Xpress by visiting '<IP or domain here>:7000'
+- Log in using the wizard account (The Java Applet will work fine using Iced Tea and Firefox under Linux)
+-
 
 
-Two verbs have been changed for the js_telnet branch's copy of the enCore database, ```#147``` - ```java_html```, and ```#148``` - ```standalone_html```. Here are those verbs by themselves:
-
-
-# ```#147``` - ```java_html```
 
 > "===========================================================";
 > "Copyright (C) 1999-2004, Jan Rune Holmevik and Sindre Soerensen";
