@@ -53,7 +53,6 @@ cd ${INSTALLDIR}/bin
 cd ${INSTALLDIR}
 git clone https://github.com/rhinoceraptor/LitWorlds.git
 cd LitWorlds
-git checkout telnet_only
 cd src/server
 npm install
 cake build
