@@ -155,7 +155,7 @@
  *	 NP_SINGLE or NP_LOCAL.
  */
 
-/* #define OUTBOUND_NETWORK */
+#define OUTBOUND_NETWORK
 
 /******************************************************************************
  * The following constants define certain aspects of the server's network
@@ -197,7 +197,7 @@
  * .name and .location), define IGNORE_PROP_PROTECTED.  The extra
  * property lookups on every reference to a built-in property are
  * expensive.
- ****************************************************************************** 
+ ******************************************************************************
  */
 
 #define IGNORE_PROP_PROTECTED
@@ -216,7 +216,7 @@
  * the next time (if it's in a loop) it will have the only reference to the
  * copy and then it can take advantage.
  *
- * NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL    
+ * NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL
  *
  * This option affects the length of certain bytecode sequences.
  * Suspended tasks in a database from a server built with this option
@@ -227,7 +227,7 @@
  * lifted in a future version of the server software.  Consider this
  * option as being BETA QUALITY until then.
  *
- * NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL    
+ * NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL    NOTE WELL
  *
  ****************************************************************************** */
 /* #define BYTECODE_REDUCE_REF */
@@ -334,7 +334,7 @@
 
 #endif				/* !Options_h */
 
-/* 
+/*
  * $Log: options.h,v $
  * Revision 1.7  2000/01/11 02:05:27  nop
  * More doc tweaking, really warn about BYTECODE_REDUCE_REF.
